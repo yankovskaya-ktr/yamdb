@@ -4,6 +4,7 @@
 Произведения делятся на категории: «Книги», «Фильмы», «Музыка».   
 Список категорий (Category) может быть расширен администратором.**  
 
+![Workflow](https://github.com/yankovskaya-ktr/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 ### Запуск проекта:
@@ -11,7 +12,7 @@
 Клонировать репозиторий и перейти в него:  
   
 ```  
-git clone https://github.com/yankovskaya-ktr/infra_sp2.git
+git clone https://github.com/yankovskaya-ktr/yamdb_final.git
 cd infra_sp2
 ``` 
 
