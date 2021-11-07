@@ -4,7 +4,7 @@
 Произведения делятся на категории: «Книги», «Фильмы», «Музыка».   
 Список категорий (Category) может быть расширен администратором.**  
 
-![workflow](https://github.com/yankovskaya-ktr/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![Workflow](https://github.com/yankovskaya-ktr/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 ### Запуск проекта:
