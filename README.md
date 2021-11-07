@@ -13,7 +13,7 @@
   
 ```  
 git clone https://github.com/yankovskaya-ktr/yamdb_final.git
-cd infra_sp2
+cd yamdb_final
 ``` 
 
 Создать файл .env по шаблону .env.template:
