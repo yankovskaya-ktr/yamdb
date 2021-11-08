@@ -6,6 +6,8 @@
 
 ![Workflow](https://github.com/yankovskaya-ktr/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
+Документация: http://178.154.231.118/redoc/
+
 
 ### Запуск проекта:
   
