@@ -7,7 +7,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ~/.env
+      - /home/yanka9689/.env
   web:
     image: yankovskayaktr/yamdb:latest
     restart: always
@@ -19,14 +19,14 @@ services:
     depends_on:
       - db
     env_file:
-      - ~/.env
+      - /home/yanka9689/.env
   nginx:
     image: nginx:1.19.3
     restart: always
     ports:
       - "80:80"
     volumes:
-      - ~/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - /home/yanka9689/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/var/html/static/
       - media_value:/var/html/media/
     depends_on:
