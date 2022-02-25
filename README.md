@@ -1,11 +1,11 @@
-# Проект YaMDb  
-  
-**Проект YaMDb собирает отзывы (Review) пользователей на произведения (Title).
-На основе отзывов формируется рейтинг произведения.
-Произведения делятся на категории (Category): «Книги», «Фильмы», «Музыка».
-Произведению может быть присвоен жанр (Genre)**  
+# Проект YaMDb
 
 ![Workflow](https://github.com/yankovskaya-ktr/yamdb/actions/workflows/yamdb_workflow.yml/badge.svg)
+  
+Проект YaMDb собирает отзывы (Review) пользователей на произведения (Title).
+На основе отзывов формируется рейтинг произведения.
+Произведения делятся на категории (Category): «Книги», «Фильмы», «Музыка».
+Произведению может быть присвоен жанр (Genre)
 
 После запуска проекта документация доступна по адресу: localhost/redoc/
 
@@ -18,36 +18,36 @@ Python 3.7, Django 3.0.5, Django REST framework 3.12.4, Simple JWT, PostgreSQL, 
 Клонировать репозиторий и перейти в него:  
   
 ```  
-git clone https://github.com/yankovskaya-ktr/yamdb.git
-cd yamdb
+> git clone https://github.com/yankovskaya-ktr/yamdb.git
+> cd yamdb
 ``` 
 
 Создать файл .env по шаблону .env.template:
 
 ```
-cp .env.template .env
+> cp .env.template .env
 ```
 Запустить приложение:
 
 ``` 
-docker-compose up
+> docker-compose up
 ``` 
 Провести миграции:
 
 ``` 
-docker-compose exec web python manage.py migrate --noinput
+> docker-compose exec web python manage.py migrate --noinput
 ``` 
 
 Создать суперпользователя:
 
 ``` 
-docker-compose exec web python manage.py createsuperuser
+> docker-compose exec web python manage.py createsuperuser
 ``` 
 
 Импортировать данные из CSV в базу данных:  
   
 ```  
-docker-compose exec web python manage.py import_from_csv <csv_файл> <имя_модели>    
+> docker-compose exec web python manage.py import_from_csv <csv_файл> <имя_модели>    
 ```  
 
   
@@ -74,7 +74,7 @@ docker-compose exec web python manage.py import_from_csv <csv_файл> <имя_
   
 base path: /api/v1
   
-## AUTH (аутентификация):  
+#### AUTH (аутентификация):  
   
  а) Регистрация нового пользователя (auth/signup/): - POST - (Доступно без токена) *Получить код подтверждения на переданный email.  
 *использовать имя 'me' в качестве username запрещено.  
@@ -82,7 +82,7 @@ base path: /api/v1
   
  а) Регистрация нового пользователя (auth/token/): - POST - (Доступно без токена) *Получение JWT-токена в обмен на username и confirmation code.  
   
-## users (пользователи):  
+#### users (пользователи):  
   
  а) List (users/): - GET - (только Администратор) - POST - (только Администратор)
  
@@ -90,21 +90,21 @@ base path: /api/v1
  - GET - (только Администратор) - PPD - (только Администратор)    
  - GET -  (только Аутентифицированный пользователь) - PPD -  (только Аутентифицированный пользователь)  
 
-## categories (типы произведений):  
+#### categories (типы произведений):  
   
  а) List (categories/): - GET - любой (в т.ч. и Аноним) - POST - (только Администратор) 
  *Поле slug каждой категории должно быть уникальным  
      
  b) retrieve (categories/{slug}/): - GET - ? - D - (только Администратор)  
 
-## genres (жанры произведений):  
+#### genres (жанры произведений):  
   
  а) List (genres/): - GET - любой (в т.ч. и Аноним) - POST - (только Администратор) 
  *Поле slug каждой категории должно быть уникальным  
      
  b) retrieve (genres/{slug}/): - GET - ? - D - (только Администратор)  
 
-## titles (произведения):  
+#### titles (произведения):  
   
  а) List (titles/): - GET - любой (в т.ч. и Аноним) - POST - (только Администратор) 
 *Нельзя добавлять произведения, которые еще не вышли (год выпуска не может быть больше текущего).  
@@ -117,7 +117,7 @@ base path: /api/v1
      
  b) retrieve (titles/{title_id}/reviews/{review_id}/): - GET - любой (в т.ч. и Аноним) - PPD - (Автор отзыва, Модератор, Администратор)  
   
-## comments (комментарии к отзывам):  
+#### comments (комментарии к отзывам):  
   
  а) List (titles/{title_id}/reviews/{review_id}/comments/): - GET - любой (в т.ч. и Аноним) - POST - (только Аутентифицированный пользователь)
  
